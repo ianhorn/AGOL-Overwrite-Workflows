@@ -9,6 +9,7 @@ __pycache__/
 *.gdb
 *.zip
 in_memory
+.DS_Store
 
 # Distribution / packaging
 .Python
