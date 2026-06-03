@@ -3,20 +3,31 @@
 
 The repo demonstrates how to use [ArcPy](https://doc.esri.com/en/arcgis-pro/latest/arcpy/get-started/what-is-arcpy-.html) and the [ArcGIS API for Python](https://developers.arcgis.com/python/latest/) to overwrite existing hosted services to ArcGIS Online (AGOL). 
 
-## Setup (Optional)
+## Setup 
+
+#### ArcGIS Pro
+
+1. [Download Repo](https://github.com/ianhorn/ArcGIS-Pro-ArcGIS-Online-Overwrite-Hosted-Services/archive/refs/heads/main.zip)
+2. Unzip locally
+3. Copy *creds.py*, *creds_example.py*, and *OverwriteHostedServices.ipynb* into the root of your ArcGIS Pro project folder
+4. Update *creds.py* using *creds_example.py* as a template.
+5. Open Notebook in Pro
+6. Follow instructions from [Notebook](#notebook)
+
+#### VS Code (optional)
 
 Feel free to fork or download this repo for your personal use.
 ```cmd
 mkdir agol-overwrite-repo
-cd ago-overwrite-repo
+cd agol-overwrite-repo
 git clone https://github.com/ianhorn/ArcGIS-Pro-ArcGIS-Online-Overwrite-Hosted-Services.git .
 
 git checkout -b mybranch
 conda activate " conda activate "C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3"
 ```
-
-Copy the content in the [creds_example.py](creds_example.py) file and paste in the the [creds.py](creds.py) file.  Update variable values.
-
+1. Copy the content in the [creds_example.py](creds_example.py) file and paste in the the [creds.py](creds.py) file. 
+2. Update variable values
+3. Follow [Notebook](#notebook) instructions.
 
 ## Notebook
 
@@ -32,17 +43,23 @@ mapping = {
 }
 ```
 
+The arcpy environment variables set set to `ovarcpy.env.overwriteOutput = True` and    
+`arcpy.env.addOutputsToMap = False`.  Not loading output to the projects map or scene prevents any lock creation.
+
+
 \* *note: the notebook walks through a feature dataset to create the initial DataFrame*
 
 ## Credentials
 
 As a best practice, AGOL credentials are setup to securely login. Checkout the API's documentation on [OAuth 2.0 authentication](https://developers.arcgis.com/documentation/security-and-authentication/user-authentication/) to set up your authentication.  
 
-```python
-# AGOL login. Will launch a browser window for OAuth2 authentication.
-# Select the appropriate user account when prompted.
-# Copy and paste the authentication token.
 
+>AGOL login. Will launch a browser window for OAuth2 authentication.  
+Select the appropriate user account when prompted.  
+Copy and paste the authentication token.  
+
+Or, replace `client_id=CLIENT_ID` with `username=<USERNAME>, password=<PASSWORD>` -  ot recommended
+```python
 gis = GIS(url="https://wwww.arcgis.com", client_id=CLIENT_ID)
 ```
 
@@ -64,12 +81,12 @@ DB_CONNECTION_NAME = 'awesome_instance_awesome'
 
 ## Troubleshooting 
 
-Due to ArcGIS Pro's reliably unreliable behavior, you can expect to run into the infamous `Error 999999`.  If this happens:
+Due to ArcGIS Pro's reliably unreliable behavior, you can expect to run into the infamous *`Error 999999`* occasionally.  If this happens:
 1. Shutdown the ArcGIS Pro Desktop Application
 2. Open Task Managar
 3. Kill any lingering ArcGIS Pro background processes
 4. Open Pro
 5. Run notebook
 
-The notebook can be executed in ArcGIS Pro or in your preferred text editor like VS Code.  Just make sure you point the IDE the python environment, most likely 
+The notebook can be executed in ArcGIS Pro or in your preferred text editor like VS Code.  Just make sure you point the IDE the python environment, most likely `C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\python.exe`.
 
