@@ -54,7 +54,7 @@ The arcpy environment variables set set to `ovarcpy.env.overwriteOutput = True` 
 As a best practice, AGOL credentials are setup to securely login. Checkout the API's documentation on [OAuth 2.0 authentication](https://developers.arcgis.com/documentation/security-and-authentication/user-authentication/) to set up your authentication.  
 
 
->AGOL login. Will launch a browser window for OAuth2 authentication.  
+>AGOL login: running this cell launches a browser window for OAuth2 authentication.  
 Select the appropriate user account when prompted.  
 Copy and paste the authentication token.  
 
