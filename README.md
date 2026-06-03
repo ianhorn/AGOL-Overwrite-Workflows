@@ -3,13 +3,12 @@
 
 The repo demonstrates how to use [ArcPy](https://doc.esri.com/en/arcgis-pro/latest/arcpy/get-started/what-is-arcpy-.html) and the [ArcGIS API for Python](https://developers.arcgis.com/python/latest/) to overwrite existing hosted services to ArcGIS Online (AGOL). 
 
-
-
 ## Setup (Optional)
 
 Feel free to fork or download this repo for your personal use.
 ```cmd
-cd YOUR_FOLDER
+mkdir agol-overwrite-repo
+cd ago-overwrite-repo
 git clone https://github.com/ianhorn/ArcGIS-Pro-ArcGIS-Online-Overwrite-Hosted-Services.git .
 
 git checkout -b mybranch
