@@ -10,6 +10,7 @@ __pycache__/
 *.zip
 in_memory
 .DS_Store
+input_tables
 
 # Distribution / packaging
 .Python
