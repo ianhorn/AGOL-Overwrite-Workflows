@@ -13,8 +13,8 @@ The Hosted Service exists and was published via a script or upload of a file of 
 
 1. [Download Repo](https://github.com/ianhorn/ArcGIS-Pro-ArcGIS-Online-Overwrite-Hosted-Services/archive/refs/heads/main.zip)
 2. Unzip locally
-3. Copy *creds.py*, *creds_example.py*, and *OverwriteHostedServices.ipynb* into the root of your ArcGIS Pro project folder
-4. Update *creds.py* using *creds_example.py* as a template.
+3. Copy *constants.py*, *constants_example.py*, and *OverwriteHostedServices.ipynb* into the root of your ArcGIS Pro project folder
+4. Update *constants.py* using *constants_example.py* as a template.
 5. Open Notebook in Pro
 6. Follow instructions from [Notebook](#notebook)
 
@@ -29,7 +29,7 @@ git clone https://github.com/ianhorn/ArcGIS-Pro-ArcGIS-Online-Overwrite-Hosted-S
 git checkout -b mybranch
 conda activate "C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3"
 ```
-1. Copy the content in the [creds_example.py](creds_example.py) file and paste in the the [creds.py](creds.py) file. 
+1. Copy the content in the [constants_example.py](constants_example.py) file and paste in the the [constants.py](constants.py) file. 
 2. Update variable values
 3. Follow [Notebook](#notebook) instructions.
 
@@ -67,9 +67,9 @@ Or, replace `client_id=CLIENT_ID` with `username=<USERNAME>, password=<PASSWORD>
 gis = GIS(url="https://wwww.arcgis.com", client_id=CLIENT_ID)
 ```
 
-Alternatively, you can use environmental variables such as an `env.py` file.  Because ArcPy doesn't have the *dotenv* package to import varbiables, I set up a `creds.py` file and import the variables directly.
+Alternatively, you can use environmental variables such as an `env.py` file.  Because ArcPy doesn't have the *dotenv* package to import varbiables, I set up a `constants.py` file and import the variables directly.
 
-Sample creds.py file
+Sample constants.py file
 ```python
 # CLient ID from AGOL Developer Credentials
 CLIENT_ID = "your_client_id_here"
